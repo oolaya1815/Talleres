@@ -4,6 +4,7 @@ docker build -t ${app} .
 docker run -p 3306:3306 \
 --name mariadb \
 -e MYSQL_ROOT_PASSWORD=1234 \
+-v "$PWD"/db:/var/lib/mysql \
 -d mariadb
 
 docker run --name myphpadmin \
